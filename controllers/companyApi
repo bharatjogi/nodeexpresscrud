@@ -1,0 +1,20 @@
+var companyModel= require('../models/companyModel');
+var companyApi=function(){}
+
+companyApi.index=function(req,res,next){
+    companyModel.getAllCompany(function(err,companies){
+        if(err){
+                throw err;
+        }else{
+            res.render('company/index',{title:'Company Listing',companies:companies});
+        }
+       
+    });
+}
+companyApi.add=function(req,res,next){
+    res.render('company/add',{title:'Add Company'});
+}
+companyApi.test=function(req,res,next){
+    res.send('test')
+}
+module.exports=companyApi
