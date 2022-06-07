@@ -40,6 +40,6 @@ app.use(methodOverride(function (req, res) {
 app.use(flash());
 app.use(bodyParser.json());
 app.use('/', routes,api_routes);
-app.listen(3000, function () {
-    console.log("App started at port 3000!!");
+app.listen(process.env.PORT || 5000, function () {
+    console.log("App started at port 5000!!");
 });
