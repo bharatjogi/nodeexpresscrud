@@ -2,14 +2,7 @@ var companyModel= require('../models/companyModel');
 var api=function(){}
 
 api.index=function(req,res,next){
-    companyModel.getAllCompany(function(err,companies){
-        if(err){
-                throw err;
-        }else{
-            res.send(companies);
-        }
-       
-    });
+  res,send('welcome to heroku api!!!')
 }
 api.getbyid=function(req,res){
     var companyId=req.params.id;
